@@ -1,0 +1,1 @@
+This project has games such as rolling of dice, rock paper scissors, otp generator , password generator, and many more. The languages used are HTML,CSS and Javascript. This project basically focuses on the DOM concept of javascript.
