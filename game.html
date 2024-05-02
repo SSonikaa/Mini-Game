@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <center>
+      <h1 id="tittle">LET'S PLAY</h1>
+      <table border="5">
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+          <th>Output</th>
+        </tr>
+        <tr>
+          <td>Dice</td>
+          <td>
+            <img src="diceroll.gif" width="15%" onclick="Dice()" class="btn" />
+          </td>
+          <td id="o1"></td>
+        </tr>
+        <tr>
+          <td>OTP</td>
+          <td><button onclick="Otp()" class="btn">generate otp</button></td>
+          <td id="o2"></td>
+        </tr>
+        <tr>
+          <td>Today's Dinner</td>
+          <td>
+            <button onclick="Dinner()" class="btn">choose your food</button>
+          </td>
+          <td id="o3"></td>
+        </tr>
+        <tr>
+          <td>Rock paper scissors</td>
+          <td>
+            <button onclick="rps(1)" class="btn">Rock</button>
+            <button onclick="rps(2)" class="btn">Paper</button>
+            <button onclick="rps(3)" class="btn">Scissors</button>
+          </td>
+          <td id="o4"></td>
+        </tr>
+        <tr>
+          <td>Today's Quotes</td>
+          <td>
+            <button onclick="Quotes()" class="btn">generate quotes</button>
+          </td>
+          <td id="o5"></td>
+        </tr>
+        <tr>
+          <td>Password Generator</td>
+          <td>
+            <button onclick="password()" class="btn">generate password</button>
+          </td>
+          <td id="o6"></td>
+        </tr>
+      </table>
+    </center>
+    <footer>A game by Sonika</footer>
+    <script>
+      function Dice() {
+        let x = Math.floor(Math.random() * 6) + 1;
+        document.querySelector(
+          "#o1"
+        ).innerHTML = `<img src='dice${x}.png' width='15%'>`;
+      }
+      function Otp() {
+        let x = Math.floor(Math.random() * (999999 - 100000)) + 100000;
+        document.querySelector("#o2").innerText = x;
+      }
+      function password() {
+        let d = Math.floor(Math.random() * (99 - 10) + 1) + 10;
+        let c1 = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
+        let c2 = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
+        let c3 = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
+        let s = Math.floor(Math.random() * (47 - 33 + 1)) + 33;
+        document.querySelector("#o6").innerText =
+          String.fromCharCode(c1) +
+          String.fromCharCode(s) +
+          d +
+          String.fromCharCode(c2) +
+          String.fromCharCode(c3);
+      }
+      function Quotes() {
+        let menu = [
+          "To love oneself is the beginning of a lifelong romance.",
+          "Almost everything will work again if you unplug it for a few minutes, including you",
+          "You’re braver than you believe, and stronger than you seem, and smarter than you think.",
+          "No one can make you feel inferior without your consent..",
+          "if you want the rainbow, you gotta put up with the rain!",
+          "Try to be a rainbow in someone else’s cloud.",
+          "Each day comes bearing its gifts. Untie the ribbon.",
+        ];
+        let l = menu.length;
+        let x = Math.floor(Math.random() * l);
+        document.querySelector("#o5").innerText = menu[x];
+      }
+      function rps(user) {
+        let comp = Math.floor(Math.random() * 3) + 1;
+        console.log(comp);
+        if (user == comp) document.querySelector("#o4").innerText = "Tie";
+        else if (
+          (user == 1 && comp == 2) ||
+          (user == 3 && comp == 1) ||
+          (user == 2 && comp == 3)
+        )
+          document.querySelector("#o4").innerText = "Computer Win";
+        else document.querySelector("#o4").innerText = "User Win";
+      }
+      function Dinner() {
+        let menu = [
+          "Momos",
+          "Ramen",
+          "Pakoda",
+          "Chaat",
+          "Paratha",
+          "Pasta",
+          "kachodi",
+          "Dhokla",
+          "Pizza",
+          "Jilebi",
+          "rabdi",
+          "Pulao",
+          "Rajma-Chawal",
+          "chane",
+          "potato",
+        ];
+        let l = menu.length;
+        let x = Math.floor(Math.random() * l);
+        document.querySelector("#o3").innerText = menu[x];
+      }
+    </script>
+  </body>
+</html>
