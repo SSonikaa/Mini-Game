@@ -1,4 +1,4 @@
-# 🎮 LET'S PLAY - Mini JavaScript Games
+# 🎮 Let's play mini javascript games
 
 A fun and interactive web project featuring mini-games like:
 
